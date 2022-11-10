@@ -1,13 +1,28 @@
-import { Header } from 'components/Header';
-import { Button } from 'components/Button';
-import { ReactComponent as Logo } from 'assets/favicon.svg';
+import { Routes, Route } from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import SpecificPage from './pages/SpecificPage';
 
-const App = () => (
-  <div className="App">
-    <Header title="hola"/>
-    <Logo height={100} width={100}/>
-    <Button onClick={() => alert('hola')}>Heyo</Button>
-  </div>
-);
+const App = () => {
+  const Components: Record<string, () => JSX.Element> = {
+    '/': MainPage,
+    cards: MainPage,
+    '/cards/:ID': SpecificPage,
+  };
+
+  const SpecificRoute = (routeName: string) => {
+    const Component = Components[routeName];
+    return Component ? <Component /> : <h1>Not found</h1>;
+  };
+
+  return (
+    <div className="App">
+      <Routes>
+        {Object.keys(Components).map((route) => (
+          <Route path={route} key={route} element={SpecificRoute(route)} />
+        ))}
+      </Routes>
+    </div>
+  );
+};
 
 export default App;

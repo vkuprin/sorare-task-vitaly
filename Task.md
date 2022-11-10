@@ -13,15 +13,15 @@ questions, please do not hesitate to ask us. Good luck!
 
 Sorare’s player cards display various information about a player. Each card has
 multiple aributes, including:
-● Name & season picture,
-● Season
-● Scarcity
-● Team name & picture,
-● Shirt Number
-● Age
-● Position
-● Country
-● etc...
+* Name & season picture,
+* Season
+* Scarcity
+* Team name & picture,
+* Shirt Number
+* Age
+* Position
+* Country
+* etc...
 
 ### Slugs
 
