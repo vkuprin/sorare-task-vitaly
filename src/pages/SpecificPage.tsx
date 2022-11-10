@@ -20,7 +20,7 @@ const Center = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   margin-top: 100px;
 `;

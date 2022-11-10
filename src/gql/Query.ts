@@ -27,16 +27,3 @@ export const GET_CARD_BY_SLUG = gql`
     }
   }
 `;
-
-export const GET_ALL_MULTIPLE_SPECIFIC_CARDS = gql`
-  query GetAllMultipleSpecificCards($slugs: [String!]!) {
-    allCards(slugs: $slugs) {
-      nodes {
-        id
-        slug
-        name
-        pictureUrl
-      }
-    }
-  }
-`;

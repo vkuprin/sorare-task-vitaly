@@ -17,7 +17,7 @@ const CardBox = ({ slug }: CardBoxProps) => {
   if (!data) return null;
 
   return (
-    <>
+    <Container>
       <ImageCard src={data?.card.pictureUrl} alt={data?.card.name} />
       <Section>
         <ul style={{ color: 'white' }}>
@@ -28,9 +28,19 @@ const CardBox = ({ slug }: CardBoxProps) => {
           <li>Can Sell: {data?.card.canSell ? 'Yes' : 'No'}</li>
         </ul>
       </Section>
-    </>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+`;
 
 const ImageCard = styled.img`
   width: 100%;
